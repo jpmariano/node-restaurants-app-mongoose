@@ -121,9 +121,12 @@ app.use('*', function(req, res) {
   res.status(404).json({message: 'Not Found'});
 });
 
+<<<<<<< HEAD
 // closeServer needs access to a server object, but that only
 // gets created when `runServer` runs, so we declare `server` here
 // and then assign a value to it in run
+=======
+>>>>>>> cbbca4183d2eecfcc3f9f45bc541c167ed19d53b
 let server;
 
 // this function connects to our database, then starts the server
@@ -134,8 +137,13 @@ function runServer(databaseUrl=DATABASE_URL, port=PORT) {
       if (err) {
         return reject(err);
       }
+<<<<<<< HEAD
       server = app.listen(port, () => {
         console.log(`Your app is listening on port ${port}`);
+=======
+      server = app.listen(PORT, () => {
+        console.log(`Your app is listening on port ${PORT}`);
+>>>>>>> cbbca4183d2eecfcc3f9f45bc541c167ed19d53b
         resolve();
       })
       .on('error', err => {
